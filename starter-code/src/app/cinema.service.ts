@@ -1,12 +1,37 @@
-[
+import { Injectable } from '@angular/core';
+
+interface Movies {
+      id: Number,
+      title: String,
+      poster: String,
+      synopsis: String,
+      genres: String[],
+      year: Number,
+      director: String,
+      actors: String[],
+      hours: String[],
+      room: Number,
+    }
+
+@Injectable()
+
+export class CinemaService {
+
+  constructor() { }
+
+  getMovies():Array<Object> {
+    return this.movies;
+  }
+  getMovie(idMovie: Number):Object {
+   return this.movies.find(movie => movie.id === idMovie )
+  }
+  movies: Array<Movies> = [
   {
     id: 1,
     title: "The Shawshank Redemption",
     poster: "https://i.imgur.com/SuW2ZlC.jpg",
     synopsis: "In 1947, Andy Dufresne (Tim Robbins), a banker in Maine, is convicted of murdering his wife and her lover, a golf pro. Since the state of Maine has no death...",
-    genres: [
-      "Crime", "Drama"
-    ],
+    genres: [ "Crime", "Drama"],
     year: 1994,
     director: "Frank Darabont",
     actors: [
@@ -16,7 +41,13 @@
       "William Sadler",
       "Clancy Brown",
       "Gil Bellows"
-    ]
+    ],
+    hours: [
+      "Monday 19:30, 22:30",
+      "Tuesday 19:30, 22:30",
+      "Wednesday 19:30, 22:30",
+    ],
+    room: 1
   }, {
     id: 2,
     title: "The Godfather",
@@ -34,7 +65,13 @@
       "Richard S. Castellano",
       "Robert Duvall",
       "Sterling Hayden"
-    ]
+    ],
+    hours: [
+      "Monday 19:30, 22:30",
+      "Tuesday 19:30, 22:30",
+      "Wednesday 19:30, 22:30",
+      ],
+      room: 2,
   }, {
     id: 3,
     title: "The Godfather Part II",
@@ -52,7 +89,13 @@
       "Robert De Niro",
       "John Cazale",
       "Talia Shire"
-    ]
+    ],
+    hours: [
+      "Monday 19:30, 22:30",
+      "Tuesday 19:30, 22:30",
+      "Wednesday 19:30, 22:30",
+    ],
+    room: 3,
   }, {
     id: 4,
     title: "The Dark Knight",
@@ -70,7 +113,13 @@
       "Michael Caine",
       "Maggie Gyllenhaal",
       "Gary Oldman"
-    ]
+    ],
+    hours: [
+      "Monday 19:30, 22:30",
+      "Tuesday 19:30, 22:30",
+      "Wednesday 19:30, 22:30",
+    ],
+    room: 4,
   },
   {
     id: 5,
@@ -89,6 +138,13 @@
       "Caroline Goodall",
       "Jonathan Sagall",
       "Embeth Davidtz"
-    ]
+    ],
+    hours: [
+      "Monday 19:30, 22:30",
+      "Tuesday 19:30, 22:30",
+      "Wednesday 19:30, 22:30",
+    ],
+    room: 5,
   }
 ]
+}

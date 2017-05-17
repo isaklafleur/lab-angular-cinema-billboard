@@ -1,0 +1,12 @@
+.movie {
+  height: 350px;
+  box-sizing: border-box;
+  width: 80%;
+  text-align: center;
+}
+img {
+  max-height: 200px;
+  display: block;
+  margin: 0 auto;
+
+}

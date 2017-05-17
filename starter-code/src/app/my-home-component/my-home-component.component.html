@@ -1,0 +1,12 @@
+<div class="container">
+  <br>
+  <br>
+  <h1>CINEMA</h1>
+<div class="row movie">
+  <div class="col-xs-6 col-md-4" *ngFor="let movie of movies">
+    <h3>Room {{ movie.room }}</h3>
+    <a [routerLink]="['/movie', movie.id]"><img class="img-responsive" [src]="movie.poster"><br>
+    <strong>{{ movie.title }}</strong><br>
+    View details</a>
+  </div>
+</div>
