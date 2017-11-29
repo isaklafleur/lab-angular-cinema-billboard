@@ -1,37 +1,10 @@
-import { Injectable } from '@angular/core';
-
-interface Movies {
-      id: Number,
-      title: String,
-      poster: String,
-      synopsis: String,
-      genres: String[],
-      year: Number,
-      director: String,
-      actors: String[],
-      hours: String[],
-      room: Number,
-    }
-
-@Injectable()
-
-export class CinemaService {
-
-  constructor() { }
-
-  getMovies():Array<Object> {
-    return this.movies;
-  }
-  getMovie(idMovie: Number):Object {
-   return this.movies.find(movie => movie.id === idMovie )
-  }
-  movies: Array<Movies> = [
+export const movieList = [
   {
     id: 1,
     title: "The Shawshank Redemption",
     poster: "https://i.imgur.com/SuW2ZlC.jpg",
     synopsis: "In 1947, Andy Dufresne (Tim Robbins), a banker in Maine, is convicted of murdering his wife and her lover, a golf pro. Since the state of Maine has no death...",
-    genres: [ "Crime", "Drama"],
+    genres: ["Crime", "Drama"],
     year: 1994,
     director: "Frank Darabont",
     actors: [
@@ -70,8 +43,8 @@ export class CinemaService {
       "Monday 19:30, 22:30",
       "Tuesday 19:30, 22:30",
       "Wednesday 19:30, 22:30",
-      ],
-      room: 2,
+    ],
+    room: 2,
   }, {
     id: 3,
     title: "The Godfather Part II",
@@ -146,5 +119,4 @@ export class CinemaService {
     ],
     room: 5,
   }
-]
-}
+];
