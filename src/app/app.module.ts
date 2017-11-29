@@ -10,7 +10,8 @@ import { MyHomeComponent } from "./components/my-home/my-home.component";
 import { MyMovieComponent } from "./components/my-movie/my-movie.component";
 
 const routes: Routes = [
-  { path: "", component: MyHomeComponent },
+  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "home", component: MyHomeComponent },
   { path: "movie/:id", component: MyMovieComponent },
 
 ];
