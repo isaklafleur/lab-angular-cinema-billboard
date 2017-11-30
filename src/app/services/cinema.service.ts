@@ -4,7 +4,6 @@ import { Movie } from "../models/Movie.model";
 
 
 @Injectable()
-
 export class CinemaService {
   movies: Movie[];
   constructor() {
@@ -14,7 +13,9 @@ export class CinemaService {
   getMovies(): Movie[] {
     return this.movies;
   }
-  getMovie(idMovie: number): Movie {
-    return this.movies.find(movie => movie.id === idMovie);
+  getMovie(id: number): Movie {
+    return this.movies.find(movie => {
+      return movie.id === id;
+    });
   }
 }
